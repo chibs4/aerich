@@ -330,12 +330,7 @@ class Migrate:
                                 and old_data_field_name not in new_data_fields_name
                             ):
                                 if upgrade:
-                                    is_rename = click.prompt(
-                                        f"Rename {old_data_field_name} to {new_data_field_name}?",
-                                        default=True,
-                                        type=bool,
-                                        show_choices=True,
-                                    )
+                                    is_rename = True
                                 else:
                                     is_rename = old_data_field_name in cls._rename_new
                                 if is_rename:
